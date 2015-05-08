@@ -6,7 +6,13 @@ use Illuminate\Database\Seeder;
 
 
 abstract class BaseSeeder extends Seeder {
-    protected static $pool;
+    protected static $pool=array();
+    protected $total = 50;
+
+    public function run()
+    {
+        $this->createMultiple($this->total);
+    }
 
     protected function createMultiple($total)
     {
